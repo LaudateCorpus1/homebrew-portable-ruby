@@ -23,8 +23,9 @@ class PortableReadline < PortableFormula
   def install
     system "./configure", "--prefix=#{prefix}",
                           "--enable-multibyte",
+                          "--enable-pic",
                           "--enable-static",
-                          "--disable-shared",
+                          "--enable-shared",
                           ("--with-curses" if OS.linux?)
     args = []
     args << "SHLIB_LIBS=-lcurses" if OS.linux?

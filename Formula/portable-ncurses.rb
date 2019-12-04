@@ -34,7 +34,7 @@ class PortableNcurses < PortableFormula
       lib.install_symlink "lib#{name}w_g.a" => "lib#{name}_g.a"
 
       lib.install_symlink "lib#{name}w.so" => "lib#{name}.so"
-      lib.install_symlink "lib#{name}w.so" => "lib#{name}w.so.#{major}"
+#      lib.install_symlink "lib#{name}w.so" => "lib#{name}w.so.#{major}"
     end
 
     lib.install_symlink "libncurses++w.a" => "libncurses++.a"
