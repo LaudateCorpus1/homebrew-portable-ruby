@@ -13,7 +13,7 @@ class PortableNcurses < PortableFormula
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-static",
-                          "--disable-shared",
+                          "--with-shared",
                           "--enable-pc-files",
                           "--with-pkg-config-libdir=#{lib}/pkgconfig",
                           "--enable-sigwinch",
@@ -32,11 +32,15 @@ class PortableNcurses < PortableFormula
       lib.install_symlink "lib#{name}w.#{major}.dylib" => "lib#{name}.#{major}.dylib"
       lib.install_symlink "lib#{name}w.a" => "lib#{name}.a"
       lib.install_symlink "lib#{name}w_g.a" => "lib#{name}_g.a"
+
+      lib.install_symlink "lib#{name}w.so" => "lib#{name}.so"
+      lib.install_symlink "lib#{name}w.so" => "lib#{name}w.so.#{major}"
     end
 
     lib.install_symlink "libncurses++w.a" => "libncurses++.a"
     lib.install_symlink "libncurses.a" => "libcurses.a"
     lib.install_symlink "libncurses.dylib" => "libcurses.dylib"
+    lib.install_symlink "libncurses.so" => "libcurses.so"
 
     (lib/"pkgconfig").install_symlink "ncursesw.pc" => "ncurses.pc"
 
