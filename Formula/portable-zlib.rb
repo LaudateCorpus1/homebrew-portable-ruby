@@ -15,7 +15,7 @@ class PortableZlib < PortableFormula
   end
 
   def install
-    system "./configure", "--static", "--prefix=#{prefix}"
+    system "./configure", "--static", "--prefix=#{prefix}", "--enable-shared"
     system "make", "install"
   end
 

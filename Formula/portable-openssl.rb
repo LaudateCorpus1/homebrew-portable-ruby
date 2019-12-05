@@ -49,7 +49,7 @@ class PortableOpenssl < PortableFormula
       --openssldir=#{openssldir}
       no-ssl2
       no-ssl3
-      no-shared
+      shared
       enable-cms
     ]
 

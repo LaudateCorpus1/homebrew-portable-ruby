@@ -34,6 +34,7 @@ class PortableRuby < PortableFormula
     args = %W[
       --prefix=#{prefix}
       --enable-load-relative
+      --enable-shared
       --with-static-linked-ext
       --with-out-ext=tk,sdbm,gdbm,dbm
       --without-gmp

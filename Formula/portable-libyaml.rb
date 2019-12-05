@@ -10,7 +10,7 @@ class PortableLibyaml < PortableFormula
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--enable-static",
-                          "--disable-shared"
+                          "--enable-shared"
     system "make", "install"
   end
 
